@@ -1,0 +1,28 @@
+.cart__list__item__container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cart__list__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    border: azure 1px solid;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+}
+.cart__list__item__button {
+    margin: 0 4px;
+    background: none;
+    border: #fff 1px solid;
+    border-radius: 0.7rem;
+    color: azure;
+    cursor: pointer;
+}
+.cart__list__item__button:hover {
+    background-color: #39398c;
+}
+.cart__list__item__button:active {
+    background-color: #200c3a;
+}

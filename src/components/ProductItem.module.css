@@ -1,0 +1,40 @@
+.product {
+    padding: 2rem;
+    width: 250px;
+    border: coral 1px solid;
+    border-radius: 8px;
+}
+
+.field {
+    margin: 0.5rem;
+    padding: 4px;
+    text-align: center;
+}
+
+.name {
+    font-size: 1.2rem;
+}
+
+.price {
+    font-size: 0.8rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions__cart {
+    border: none;
+    border-radius: 4px;
+    color: azure;
+    padding: 4px;
+    cursor: pointer;
+    background: none;
+}
+.actions__cart:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.actions__cart:active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
