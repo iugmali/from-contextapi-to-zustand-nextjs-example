@@ -3,15 +3,16 @@
 import styles from "@/components/CartItem.module.css";
 import {formatCurrency} from "@/lib/util";
 import {TCartItem} from "@/types/cart";
-import {useContext} from "react";
-import CartContext from "@/store/cartContext";
+import {useCartStore} from "@/store/useCartStore";
 
 type Props = {
   product: TCartItem;
 }
 
 const CartItem = ({product}: Props) => {
-  const {addProduct, subtractProduct, removeProduct} = useContext(CartContext);
+  const addProduct = useCartStore(state => state.addProduct);
+  const subtractProduct = useCartStore(state => state.subtractProduct);
+  const removeProduct = useCartStore(state => state.removeProduct);
 
   return (
     <div className={styles.cart__list__item__container}>

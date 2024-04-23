@@ -1,13 +1,16 @@
 'use client'
 
-import {useContext} from "react";
-import CartContext from "@/store/cartContext";
 import {formatCurrency} from "@/lib/util";
 import styles from "./CartList.module.css";
 import CartItem from "@/components/CartItem";
+import {useCartStore} from "@/store/useCartStore";
 
 const CartList = () => {
-  const { products, totalPrice, clearCart, loading} = useContext(CartContext);
+  const loading = false;
+  const totalPrice = useCartStore(state => state.totalPrice);
+  const products = useCartStore(state => state.products);
+  const clearCart = useCartStore(state => state.clearCart);
+
   return loading ? (
     <div className={'loading'}>Loading...</div>
   ) : (totalPrice === 0) ? (

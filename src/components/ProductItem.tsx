@@ -2,16 +2,16 @@
 
 import {TProduct} from "@/types/product";
 import styles from "./ProductItem.module.css";
-import {useContext} from "react";
-import CartContext from "@/store/cartContext";
 import {formatCurrency} from "@/lib/util";
+import {useCartStore} from "@/store/useCartStore";
 
 type Props = {
   product: TProduct;
 }
 
 const ProductItem = ({product}: Props) => {
-  const {addProduct} = useContext(CartContext);
+  const addProduct = useCartStore(state => state.addProduct);
+
   return (
     <div className={styles.product}>
       <h2 className={`${styles.field} ${styles.name}`}>{product.name}</h2>

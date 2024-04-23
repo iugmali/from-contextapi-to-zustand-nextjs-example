@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-import {useContext} from "react";
-import CartContext from "@/store/cartContext";
+import {useCartStore} from "@/store/useCartStore";
 
 const Navbar = () => {
-  const {totalQuantity, loading} = useContext(CartContext);
+  const loading = false;
+  const totalQuantity = useCartStore(state => state.totalQuantity);
 
   return (
     <nav className={styles.navbar}>
